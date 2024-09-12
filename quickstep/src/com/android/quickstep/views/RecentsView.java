@@ -807,7 +807,7 @@ public abstract class RecentsView<CONTAINER_TYPE extends Context & RecentsViewCo
         mSizeStrategy = sizeStrategy;
         mContainer = RecentsViewContainer.containerFromContext(context);
         mOrientationState = new RecentsOrientedState(
-                context, mSizeStrategy, this::animateRecentsRotationInPlace);
+                context.getApplicationContext(), mSizeStrategy, this::animateRecentsRotationInPlace);
         final int rotation = mContainer.getDisplay().getRotation();
         mOrientationState.setRecentsRotation(rotation);
 
